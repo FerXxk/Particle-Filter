@@ -9,12 +9,20 @@
 
 **Advanced particle filtering implementations for real-time beacon position estimation in ROS2**
 
-[📚 Documentation](docs/) • [🎥 Demo Videos](https://drive.google.com/drive/folders/1R675cugDEPXwAdzKYmMFq00smihU1Ul_?usp=drive_link) • [🐛 Report Bug](https://github.com/rme19/pf_adr/issues)
+[📚 Documentation](docs/) • [🐛 Report Bug](https://github.com/FerXxk/Particle-Filter/issues)
 
 </div>
 
 ---
 
+### 🎯 Problem Statement
+
+The core objective is the **3D stochastic localization of static beacons** using a mobile agent (UAV). This is a **range-only estimation problem** where the system must infer the (x, y, z) coordinates of multiple targets based on noisy distance measurements and the agent's self-localization.
+
+**Technical Challenges:**
+- **Non-linear Observation Model**: Distance measurements define a spherical manifold of possible positions, requiring non-linear estimation techniques.
+- **Measurement Noise**: Both the range sensor and the drone's odometry are subject to Gaussian stochastic noise.
+- **Geometric Ambiguity**: A single measurement cannot resolve the target's position; the filter must integrate multiple observations from different spatial vantage points.
 ## 📖 Overview
 
 This ROS2 package implements **three distinct particle filter approaches** for estimating the position of multiple fixed beacons using a simulated drone. Each implementation offers unique advantages for different scenarios and computational constraints.
@@ -23,6 +31,7 @@ This ROS2 package implements **three distinct particle filter approaches** for e
   <img src="media/rviz_gazebo.png" alt="RViz and Gazebo Simulation" width="800"/>
   <p><em>Particle filter visualization in RViz with Gazebo simulation</em></p>
 </div>
+
 
 ### 🚀 Key Features
 
@@ -120,7 +129,7 @@ mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 
 # Clone repository with submodules
-git clone --recurse-submodules https://github.com/rme19/pf_adr.git
+git clone --recurse-submodules https://github.com/FerXxk/Particle-Filter.git
 
 # Build workspace
 cd ~/ros2_ws
@@ -220,29 +229,44 @@ Run the appropriate visualization script:
 
 ### 📸 Sample Results
 
+#### 1️⃣ Basic Particle Filter (F1)
+Experimenting with particle counts and noise parameters.
+
 <div align="center">
   <table>
     <tr>
-      <td align="center">
-        <img src="media/Prueba 2_1.png" width="400"/><br>
-        <em>Test 2 - Configuration 1</em>
-      </td>
-      <td align="center">
-        <img src="media/Prueba 2_2.png" width="400"/><br>
-        <em>Test 2 - Configuration 2</em>
-      </td>
+      <td align="center"><img src="media/F1_2000P.png" width="400"/><br><em>2000 Particles</em></td>
+      <td align="center"><img src="media/F1_5000P.png" width="400"/><br><em>5000 Particles</em></td>
     </tr>
     <tr>
-      <td align="center">
-        <img src="media/Prueba1_4.png" width="400"/><br>
-        <em>Test 1 - 4 Beacons</em>
-      </td>
-      <td align="center">
-        <img src="media/Prueba2_4.png" width="400"/><br>
-        <em>Test 2 - 4 Beacons</em>
-      </td>
+      <td align="center"><img src="media/F1_ruidobajo.png" width="400"/><br><em>Low Noise</em></td>
+      <td align="center"><img src="media/F1_ruidoalto.png" width="400"/><br><em>High Noise</em></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="media/F1_sigmabaja.png" width="400"/><br><em>Low Sigma</em></td>
+      <td align="center"><img src="media/F1_sigmaalta.png" width="400"/><br><em>High Sigma</em></td>
     </tr>
   </table>
+</div>
+
+#### 2️⃣ Smart Particle Filter (F2)
+Dynamic distribution with different global particle budgets.
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="media/F2_6000P.png" width="400"/><br><em>6000 Particles Budget</em></td>
+      <td align="center"><img src="media/F2_15000P.png" width="400"/><br><em>15000 Particles Budget</em></td>
+    </tr>
+  </table>
+</div>
+
+#### 3️⃣ Particle Filter + EKF (F3)
+Hybrid transition and convergence.
+
+<div align="center">
+  <img src="media/F3.png" width="600"/><br>
+  <em>Convergence and EKF hand-over</em>
 </div>
 
 ---
@@ -261,12 +285,6 @@ pf_adr/
 ├── 📂 docs/                 # Additional documentation
 └── README.md
 ```
-
----
-
-## 🎥 Demo & Results
-
-For video demonstrations and additional screenshots, visit our **[Google Drive folder](https://drive.google.com/drive/folders/1R675cugDEPXwAdzKYmMFq00smihU1Ul_?usp=drive_link)**.
 
 ---
 

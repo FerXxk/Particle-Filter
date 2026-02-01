@@ -1,0 +1,15 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/roberto/pegasus/install/pegasus_demos/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/roberto/pegasus/install/pegasus_demos/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "cmake.sourceDirectory": "/home/roberto/adr_ws/src/pf_adr/src/sjtu_drone/sjtu_drone_description"
+}

@@ -1,0 +1,47 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/roberto/ros2_ws/install/turtlesim/include/**",
+        "/home/roberto/ros2_ws/install/thrust_curves/include/**",
+        "/home/roberto/ros2_ws/install/sjtu_drone_description/include/**",
+        "/home/roberto/ros2_ws/install/px4_ros_com/include/**",
+        "/home/roberto/ros2_ws/install/px4_msgs/include/**",
+        "/home/roberto/ros2_ws/install/pid/include/**",
+        "/home/roberto/ros2_ws/install/pegasus_utils/include/**",
+        "/home/roberto/pegasus_external/install/vrpn_vendor/include/**",
+        "/home/roberto/pegasus_external/install/mavsdk_vendor/include/**",
+        "/home/roberto/pegasus_external/install/casadi_vendor/include/**",
+        "/home/roberto/pegasus/install/autopilot_controllers/include/**",
+        "/home/roberto/pegasus/install/thrust_curves/include/**",
+        "/home/roberto/pegasus/install/static_trajectories/include/**",
+        "/home/roberto/pegasus/install/static_trajectory_manager/include/**",
+        "/home/roberto/pegasus/install/pid/include/**",
+        "/home/roberto/pegasus/install/autopilot_modes/include/**",
+        "/home/roberto/pegasus/install/pegasus_utils/include/**",
+        "/home/roberto/pegasus/install/estimator_manager/include/**",
+        "/home/roberto/pegasus/install/box_geofencing/include/**",
+        "/home/roberto/pegasus/install/autopilot/include/**",
+        "/home/roberto/pegasus/install/pegasus_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/roberto/ros2_ws/src/cpp_parameters/include/**",
+        "/home/roberto/ros2_ws/src/gimbal/include/**",
+        "/home/roberto/ros2_ws/src/isaacsim_mavros/include/**",
+        "/home/roberto/ros2_ws/src/px4_ros_com/include/**",
+        "/home/roberto/ros2_ws/src/ros_tutorials/turtlesim/include/**",
+        "/home/roberto/ros2_ws/src/sjtu_drone/sjtu_drone_description/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

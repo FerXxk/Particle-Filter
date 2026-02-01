@@ -1,0 +1,34 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/roberto/ros2_ws/install/turtlesim/local/lib/python3.10/dist-packages",
+        "/home/roberto/ros2_ws/install/sjtu_drone_control/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/sjtu_drone_bringup/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/rotor_control/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/px4_ros_com/local/lib/python3.10/dist-packages",
+        "/home/roberto/ros2_ws/install/px4_msgs/local/lib/python3.10/dist-packages",
+        "/home/roberto/ros2_ws/install/pf_adr/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/particle_filter/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/p2_kf_adr/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/p1_adr_rme/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_demos/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/roberto/ros2_ws/install/turtlesim/local/lib/python3.10/dist-packages",
+        "/home/roberto/ros2_ws/install/sjtu_drone_control/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/sjtu_drone_bringup/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/rotor_control/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/px4_ros_com/local/lib/python3.10/dist-packages",
+        "/home/roberto/ros2_ws/install/px4_msgs/local/lib/python3.10/dist-packages",
+        "/home/roberto/ros2_ws/install/pf_adr/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/particle_filter/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/p2_kf_adr/lib/python3.10/site-packages",
+        "/home/roberto/ros2_ws/install/p1_adr_rme/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_demos/lib/python3.10/site-packages",
+        "/home/roberto/pegasus/install/pegasus_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

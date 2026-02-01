@@ -1,0 +1,180 @@
+<sdf version='1.7'>
+  <!-- Definición del mundo vacío -->
+  <world name='default'>
+    
+    <!-- Luces del mundo -->
+    <light name='sun' type='directional'>
+      <!-- Habilitar sombras -->
+      <cast_shadows>1</cast_shadows>
+      <!-- Posición y orientación de la luz -->
+      <pose>0 0 10 0 -0 0</pose>
+      <!-- Propiedades del color y brillo de la luz -->
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <!-- Atenciones para la luz -->
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <!-- Dirección de la luz -->
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <!-- Suelo del mundo (Plano) -->
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <!-- Colisión del suelo -->
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <!-- Orientación del plano -->
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <!-- Fricción del suelo -->
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <!-- Visualización del suelo -->
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <!-- Orientación y tamaño del plano visual -->
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <!-- Ruta del material utilizado -->
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+
+    <!-- Gravedad del mundo -->
+    <gravity>0 0 -9.8</gravity>
+
+    <!-- Campo magnético (puedes dejarlo como está) -->
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+
+    <!-- Configuración de la atmósfera -->
+    <atmosphere type='adiabatic'/>
+
+    <!-- Física del mundo -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- Propiedades de la escena -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+
+    <!-- Configuración de audio (opcional) -->
+    <audio>
+      <device>default</device>
+    </audio>
+
+    <!-- Viento en el mundo (puedes dejarlo como está) -->
+    <wind/>
+
+    <!-- Coordenadas esféricas (opcional, según lo necesites) -->
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+
+    <!-- Modelo adicional de un plano de asfalto (opcional) -->
+    <model name='asphalt_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <!-- Tamaño de la caja para el asfalto -->
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <fricción>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </fricción>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <!-- Tamaño visual del asfalto -->
+              <size>20 20 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <!-- Ruta del material para el asfalto -->
+              <uri>model://asphalt_plane/materials/scripts</uri>
+              <uri>model://asphalt_plane/materials/textures</uri>
+              <name>vrc/asphalt</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <!-- Posición del modelo de asfalto -->
+      <pose>0.027118 -0.028406 0 0 -0 0</pose>
+    </model>
+
+
+    <pose>5 5 0.75 0 0 0</pose> <!-- Coloca el modelo base en el suelo -->
+
+
+  </world>
+</sdf>
